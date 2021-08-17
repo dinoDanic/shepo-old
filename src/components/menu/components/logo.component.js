@@ -1,0 +1,18 @@
+import React from "react";
+import styled from "styled-components";
+
+const Logo = () => {
+  return <LogoText>Shepo</LogoText>;
+};
+
+const LogoText = styled.div`
+  font-family: ${(props) => props.theme.fonts.logo};
+  font-size: ${(props) => props.theme.fontSize.xxl};
+  text-align: center;
+  color: rgba(0, 0, 0, 0.07);
+  margin-top: ${(props) => props.theme.space[12]};
+  margin-bottom: ${(props) => props.theme.space[10]};
+  pointer-events: none;
+`;
+
+export default Logo;
