@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import { faHome, faStickyNote } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,18 +9,22 @@ const Menu = () => {
   return (
     <Container>
       <List>
-        <MenuItem>
-          <Icon>
-            <FontAwesomeIcon icon={faHome} />
-          </Icon>
-          Početna
-        </MenuItem>
-        <MenuItem>
-          <Icon>
-            <FontAwesomeIcon icon={faStickyNote} />
-          </Icon>
-          Narudžbe
-        </MenuItem>
+        <Link to="/">
+          <MenuItem>
+            <Icon>
+              <FontAwesomeIcon icon={faHome} />
+            </Icon>
+            Početna
+          </MenuItem>
+        </Link>
+        <Link to="/orders">
+          <MenuItem>
+            <Icon>
+              <FontAwesomeIcon icon={faStickyNote} />
+            </Icon>
+            Narudžbe
+          </MenuItem>
+        </Link>
       </List>
     </Container>
   );
@@ -39,7 +44,7 @@ const MenuItem = styled.li`
   font-size: ${(props) => props.theme.fontSize["small"]};
   transition: 0.2s ease all;
   border-radius: 10px;
-  color: ${(props) => props.theme.darkColors.l6};
+  color: ${(props) => props.theme.darkColors.l4};
   /* border-left: 2px solid transparent; */
   svg {
     transition: 0.2s ease all;

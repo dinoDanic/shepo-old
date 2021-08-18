@@ -12,6 +12,8 @@ export const space = [
   "40px",
   "44px",
   "48px",
+  "52px",
+  "56px",
 ];
 export const fontSize = {
   small: "14px",
