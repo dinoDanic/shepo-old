@@ -9,7 +9,7 @@ const OrdersPage = () => {
     <Contaienr>
       <Header>
         <MenuTrigger />
-        <Title>Orders</Title>
+        <Title>Narudžbe</Title>
       </Header>
       <Orders />
     </Contaienr>
@@ -21,7 +21,8 @@ const Contaienr = styled.div``;
 const Header = styled.div`
   display: flex;
   align-items: center;
-  margin-bottom: ${(props) => props.theme.space[10]};
+  margin-bottom: ${(props) => props.theme.space[8]};
+  padding-top: ${(props) => props.theme.space[3]};
 `;
 
 const Title = styled.h2``;

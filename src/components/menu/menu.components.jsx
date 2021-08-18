@@ -53,6 +53,7 @@ const MenuItem = styled.li`
   &:hover {
     background-color: ${(props) => props.theme.colors.bodyGray};
     margin-left: 5px;
+    color: ${(props) => props.theme.colors.primary};
     svg {
       margin-right: 10px;
     }

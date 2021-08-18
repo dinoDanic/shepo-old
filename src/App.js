@@ -27,7 +27,7 @@ const Container = styled.div`
 `;
 
 const MenuContainer = styled.div`
-  width: 250px;
+  min-width: 250px;
   height: 100vh;
   background-color: ${(props) => props.theme.colors.body};
 `;
