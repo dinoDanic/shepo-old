@@ -1,4 +1,4 @@
-import { colors, boxShadows } from "./colors";
+import { colors, boxShadows, lightColors, darkColors } from "./colors";
 import { space, fontSize } from "./sizing";
 import { fonts } from "./fonts";
 export const theme = {
@@ -7,4 +7,6 @@ export const theme = {
   fontSize,
   fonts,
   boxShadows,
+  lightColors,
+  darkColors,
 };

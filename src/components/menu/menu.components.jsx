@@ -9,12 +9,15 @@ const Menu = () => {
     <Container>
       <List>
         <MenuItem>
-          <FontAwesomeIcon icon={faHome} />
-          Početnaa
+          <Icon>
+            <FontAwesomeIcon icon={faHome} />
+          </Icon>
+          Početna
         </MenuItem>
         <MenuItem>
-          {" "}
-          <FontAwesomeIcon icon={faStickyNote} />
+          <Icon>
+            <FontAwesomeIcon icon={faStickyNote} />
+          </Icon>
           Narudžbe
         </MenuItem>
       </List>
@@ -22,7 +25,9 @@ const Menu = () => {
   );
 };
 
-const Container = styled.div``;
+const Container = styled.div`
+  padding: ${(props) => props.theme.space[3]};
+`;
 
 const List = styled.ul``;
 
@@ -33,21 +38,23 @@ const MenuItem = styled.li`
   padding: ${(props) => props.theme.space[3]} ${(props) => props.theme.space[4]};
   font-size: ${(props) => props.theme.fontSize["small"]};
   transition: 0.2s ease all;
-
+  border-radius: 10px;
+  color: ${(props) => props.theme.darkColors.l6};
   /* border-left: 2px solid transparent; */
-
   svg {
+    transition: 0.2s ease all;
     margin-right: 10px;
-    color: #333;
   }
   &:hover {
-    background-color: rgba(0, 0, 0, 0.02);
-    color: ${(props) => props.theme.colors.primary};
+    background-color: ${(props) => props.theme.colors.bodyGray};
+    margin-left: 5px;
     svg {
       margin-right: 10px;
-      color: ${(props) => props.theme.colors.primary};
     }
   }
+`;
+const Icon = styled.div`
+  width: 30px;
 `;
 
 export default Menu;

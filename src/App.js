@@ -27,7 +27,7 @@ const Container = styled.div`
 const MenuContainer = styled.div`
   width: 230px;
   height: 100vh;
-  background-color: ${(props) => props.theme.colors["main"]};
+  background-color: ${(props) => props.theme.colors.body};
 `;
 
 const Content = styled.div`
