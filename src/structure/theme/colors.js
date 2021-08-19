@@ -4,6 +4,10 @@ export const colors = {
     body: "#f6f8f9",
     bodyGray: "#e8eaeb",
   },
+  ui: {
+    border: "#e8eaeb",
+    borderHover: "#cacaca",
+  },
 };
 
 export const boxShadows = {

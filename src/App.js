@@ -7,6 +7,7 @@ import Logo from "./components/menu/components/logo.component";
 import DashboardPage from "./pages/dashboard/dashboard.pages";
 import OrdersPage from "./pages/orders/orders.pages";
 import DbPage from "./pages/db/db.page";
+import ProductsPage from "./pages/products/products.page";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/" component={DashboardPage} />
         <Route exact path="/orders" component={OrdersPage} />
         <Route exact path="/db" component={DbPage} />
+        <Route exact path="/db/products" component={ProductsPage} />
       </Content>
     </Container>
   );

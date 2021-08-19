@@ -11,7 +11,7 @@ export const state = [
     status: "Isporuceno",
   },
   {
-    orderId: "123",
+    orderId: "122133",
     createdDate: new Date(),
     deliveryDate: new Date(),
     orderDate: new Date(),
@@ -22,7 +22,7 @@ export const state = [
     status: "Isporučiti",
   },
   {
-    orderId: "123",
+    orderId: "112323",
     createdDate: new Date(),
     deliveryDate: new Date(),
     orderDate: new Date(),

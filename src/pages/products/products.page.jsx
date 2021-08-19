@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import styled, { css } from "styled-components";
 
-import SearchBar from "../../orders/components/search-bar.component";
-import MenuTrigger from "../../../components/menu/components/menu-trigger.component";
-import Button from "../../../components/ui/button/button.conponent";
+import SearchBar from "../orders/components/search-bar.component";
+import MenuTrigger from "../../components/menu/components/menu-trigger.component";
+import Button from "../../components/ui/button/button.conponent";
+import AddProduct from "../../components/add-product/add-product.component";
 
-const Products = () => {
+const ProductsPage = () => {
+  const [showAddProduct, setShowAddProduct] = useState(false);
   return (
     <Container>
       <Header>
@@ -14,13 +16,14 @@ const Products = () => {
       </Header>
       <FnBar>
         <SearchBar />
-        <Button>Novi Proizvod</Button>
+        <Button onClick={() => setShowAddProduct(true)}>Novi Proizvod</Button>
       </FnBar>
       <OrdersBar>
         <Customer>Šifra</Customer>
         <Poslovnica>Naziv</Poslovnica>
         <OrderId>Težina</OrderId>
       </OrdersBar>
+      {showAddProduct && <AddProduct setShowAddProduct={setShowAddProduct} />}
     </Container>
   );
 };
@@ -38,7 +41,7 @@ const Header = styled.div`
 
 const OrdersBar = styled.div`
   padding: 10px 15px;
-  border-radius: 10px;
+  border-radius: ${({ theme }) => theme.borderRadius.m};
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -68,4 +71,4 @@ const OrderId = styled.div`
   justify-content: center;
 `;
 
-export default Products;
+export default ProductsPage;
