@@ -12,6 +12,7 @@ const Orders = () => {
       <SearchBar />
       <OrdersBar>
         <Customer>Kupac</Customer>
+        <Poslovnica>Poslovnica</Poslovnica>
         <OrderId>Broj narudžbe</OrderId>
         <OrderDate>Datum narudžbe</OrderDate>
         <DeliveryDate>Datum isporuke</DeliveryDate>
@@ -32,7 +33,7 @@ const OrdersBar = styled.div`
   cursor: pointer;
   display: flex;
   justify-content: space-between;
-  background-color: ${(props) => props.theme.colors.body};
+  background-color: ${(props) => props.theme.colors.brand.body};
   margin-bottom: ${(props) => props.theme.space[2]};
 `;
 const ItemsShared = css`
@@ -41,6 +42,11 @@ const ItemsShared = css`
 `;
 const Customer = styled.div`
   ${ItemsShared}
+`;
+const Poslovnica = styled.div`
+  ${ItemsShared}
+  display: flex;
+  justify-content: center;
 `;
 const OrderId = styled.div`
   ${ItemsShared}

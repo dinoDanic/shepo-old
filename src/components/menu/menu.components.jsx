@@ -2,7 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import { faHome, faStickyNote } from "@fortawesome/free-solid-svg-icons";
+import {
+  faDatabase,
+  faHome,
+  faServer,
+  faStickyNote,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Menu = () => {
@@ -25,6 +30,14 @@ const Menu = () => {
             Narudžbe
           </MenuItem>
         </Link>
+        <Link to="/db">
+          <MenuItem>
+            <Icon>
+              <FontAwesomeIcon icon={faDatabase} />
+            </Icon>
+            Baza
+          </MenuItem>
+        </Link>
       </List>
     </Container>
   );
@@ -41,19 +54,20 @@ const MenuItem = styled.li`
   align-items: center;
   cursor: pointer;
   padding: ${(props) => props.theme.space[3]} ${(props) => props.theme.space[4]};
-  font-size: ${(props) => props.theme.fontSize["small"]};
+  font-size: ${(props) => props.theme.fontSize.s};
   transition: 0.2s ease all;
+  font-weight: 300;
   border-radius: 10px;
   color: ${(props) => props.theme.darkColors.l4};
   /* border-left: 2px solid transparent; */
   svg {
     transition: 0.2s ease all;
     margin-right: 10px;
+    opacity: 0.7;
   }
   &:hover {
-    background-color: ${(props) => props.theme.colors.bodyGray};
-    margin-left: 5px;
-    color: ${(props) => props.theme.colors.primary};
+    background-color: rgba(0, 0, 0, 0.03);
+    /* color: ${(props) => props.theme.colors.primary}; */
     svg {
       margin-right: 10px;
     }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled, { css } from "styled-components";
 
 const OrderItem = ({ order }) => {
@@ -25,6 +25,7 @@ const OrderItem = ({ order }) => {
     <Container>
       <Item>
         <Customer>{customer.name}</Customer>
+        <Poslovnica>{customer.poslovnica}</Poslovnica>
         <OrderId>{orderId}</OrderId>
         <OrderDate>{getDate(orderDate)}</OrderDate>
         <DeliveryDate>{getDate(deliveryDate)}</DeliveryDate>
@@ -45,7 +46,7 @@ const Item = styled.div`
   margin-bottom: ${(props) => props.theme.space[2]};
   font-weight: 300;
   &:hover {
-    background-color: ${(props) => props.theme.colors.body};
+    background-color: ${(props) => props.theme.colors.brand.body};
   }
 `;
 const ItemsShared = css`
@@ -54,6 +55,11 @@ const ItemsShared = css`
 `;
 const Customer = styled.div`
   ${ItemsShared}
+`;
+const Poslovnica = styled.div`
+  ${ItemsShared}
+  display: flex;
+  justify-content: center;
 `;
 const OrderId = styled.div`
   ${ItemsShared}

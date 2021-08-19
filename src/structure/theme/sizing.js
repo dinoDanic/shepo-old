@@ -15,9 +15,11 @@ export const space = [
   "52px",
   "56px",
 ];
+export const space2 = ["0px", "4px", "8px", "16px", "32px", "64px"];
 export const fontSize = {
-  small: "14px",
-  medium: "16px",
+  xs: "12px",
+  s: "14px",
+  m: "16px",
   lg: "20px",
   xl: "24px",
   xxl: "28px",

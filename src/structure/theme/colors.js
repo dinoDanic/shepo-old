@@ -1,8 +1,9 @@
 export const colors = {
-  body: "#f6f8f9",
-  bodyGray: "#e8eaeb",
-  main: "#37484f",
-  primary: "#008C8c",
+  brand: {
+    primary: "#008C8c",
+    body: "#f6f8f9",
+    bodyGray: "#e8eaeb",
+  },
 };
 
 export const boxShadows = {
