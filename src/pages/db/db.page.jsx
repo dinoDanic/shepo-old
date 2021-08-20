@@ -6,7 +6,7 @@ import Header from "../../components/header/header.component";
 import IconCard from "../../components/ui/icon-card/icon-card.component";
 import Products from "../products/products.page";
 
-const DbPage: React.FC = () => {
+const DbPage = () => {
   return (
     <Container>
       <Header title="Baza" />

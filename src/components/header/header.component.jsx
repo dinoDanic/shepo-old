@@ -3,11 +3,7 @@ import styled from "styled-components";
 
 import MenuTrigger from "../menu/components/menu-trigger.component";
 
-interface IProps {
-  title: string;
-}
-
-const Header = ({ title }: IProps) => {
+const Header = ({ title }) => {
   return (
     <Container>
       <MenuTrigger />

@@ -4,15 +4,11 @@ import { motion } from "framer-motion";
 
 import Box from "../box/box.component";
 
-interface IProps {
-  setShowAddProduct: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-const BoxPop: React.FC<IProps> = ({ children, setShowAddProduct }) => {
+const BoxPop = ({ children, setShowAddProduct, w }) => {
   return (
     <Container animate={{ scale: 1 }}>
       <Layer onClick={() => setShowAddProduct(false)} />
-      <Content>
+      <Content style={{ width: `${w}%` }}>
         <Box>{children}</Box>
       </Content>
     </Container>
@@ -41,7 +37,7 @@ const Layer = styled.div`
 const Content = styled.div`
   z-index: 150;
   height: fit-content;
-  width: 70%;
+  min-width: 300px;
 `;
 
 export default BoxPop;
