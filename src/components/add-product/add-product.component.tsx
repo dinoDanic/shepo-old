@@ -1,9 +1,13 @@
-import React from "react";
+import React, { FC, ReactNode } from "react";
 import styled from "styled-components";
 
 import BoxPop from "../ui/box-pop/box-pop.component";
 
-const AddProduct = ({ setShowAddProduct }) => {
+interface IProps {
+  setShowAddProduct: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const AddProduct: FC<IProps> = ({ setShowAddProduct }) => {
   return (
     <BoxPop setShowAddProduct={setShowAddProduct}>
       <Container>add product</Container>

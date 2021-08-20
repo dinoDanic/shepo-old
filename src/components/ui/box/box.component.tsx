@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Box = ({ children }) => {
+const Box: React.FC = ({ children }) => {
   return <Container>{children}</Container>;
 };
 

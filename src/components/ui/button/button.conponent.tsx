@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const Button = ({ children, ...otherProps }) => {
+const Button: React.FC = ({ children, ...otherProps }) => {
   return <Btn {...otherProps}>{children}</Btn>;
 };
 

@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import {
   faDatabase,
   faHome,
-  faServer,
   faStickyNote,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

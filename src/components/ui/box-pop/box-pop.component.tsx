@@ -4,7 +4,11 @@ import { motion } from "framer-motion";
 
 import Box from "../box/box.component";
 
-const BoxPop = ({ children, setShowAddProduct }) => {
+interface IProps {
+  setShowAddProduct: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const BoxPop: React.FC<IProps> = ({ children, setShowAddProduct }) => {
   return (
     <Container animate={{ scale: 1 }}>
       <Layer onClick={() => setShowAddProduct(false)} />

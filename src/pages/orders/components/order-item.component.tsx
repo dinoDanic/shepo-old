@@ -1,12 +1,25 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-const OrderItem = ({ order }) => {
-  console.log(order);
+interface IProps {
+  order: {
+    orderId: string;
+    createdDate: Date;
+    deliveryDate: Date;
+    orderDate: Date;
+    customer: {
+      name: string;
+      poslovnica: string;
+    };
+    status: string;
+  };
+}
+
+const OrderItem: React.FC<IProps> = ({ order }) => {
   const { orderId, orderDate, deliveryDate, createdDate, customer, status } =
     order;
 
-  const getDate = (date) => {
+  const getDate = (date: Date) => {
     const d = new Date(date);
     const day = d.getDay();
     const month = d.getMonth();
