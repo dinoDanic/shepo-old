@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { db } from "../../firebase/firebase.utils";
 import styled, { css } from "styled-components";
 
+import Header from "../../components/header/header.component";
 import SearchBar from "../orders/components/search-bar.component";
-import MenuTrigger from "../../components/menu/components/menu-trigger.component";
 import Button from "../../components/ui/button/button.conponent";
 import AddProduct from "../../components/add-product/add-product.component";
 import Product from "./product/product.component";
@@ -27,10 +27,7 @@ const ProductsPage = () => {
 
   return (
     <Container>
-      <Header>
-        <MenuTrigger />
-        <Title>Baza</Title>
-      </Header>
+      <Header title="Proizvodi" />
       <FnBar>
         <SearchBar />
         <Button onClick={() => setShowAddProduct(true)}>Novi Proizvod</Button>
@@ -49,25 +46,6 @@ const ProductsPage = () => {
 };
 
 const Container = styled.div``;
-
-const Title = styled.h2``;
-
-const Header = styled.div`
-  display: flex;
-  align-items: center;
-  margin-bottom: ${(props) => props.theme.space[8]};
-  padding-top: ${(props) => props.theme.space[3]};
-`;
-
-const OrdersBar = styled.div`
-  padding: 10px 15px;
-  border-radius: ${({ theme }) => theme.borderRadius.m};
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  background-color: ${(props) => props.theme.colors.brand.body};
-  margin-bottom: ${(props) => props.theme.space[2]};
-`;
 
 const FnBar = styled.div`
   display: flex;

@@ -30,6 +30,7 @@ const defaultStyle = (theme) => `
   cursor: pointer;
   border-radius: ${theme.borderRadius.s};
   margin-bottom: ${theme.space[1]};
+  font-weight: 300;
   div {
     display: flex;
     justify-content: center;

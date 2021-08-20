@@ -6,7 +6,7 @@ const Input = ({ ...otherProps }) => {
 };
 
 const InputUi = styled.input`
-  padding: ${(props) => props.theme.space[1]};
+  padding: ${(props) => props.theme.space[2]};
   border: 1px solid ${(props) => props.theme.colors.ui.border};
   border-radius: ${(props) => props.theme.borderRadius.s};
   width: 100%;

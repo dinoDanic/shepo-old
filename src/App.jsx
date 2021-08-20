@@ -8,6 +8,7 @@ import DashboardPage from "./pages/dashboard/dashboard.pages";
 import OrdersPage from "./pages/orders/orders.pages";
 import DbPage from "./pages/db/db.page";
 import ProductsPage from "./pages/products/products.page";
+import Customers from "./pages/customers/customers.page";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route exact path="/orders" component={OrdersPage} />
         <Route exact path="/db" component={DbPage} />
         <Route exact path="/db/products" component={ProductsPage} />
+        <Route exact path="/db/customers" component={Customers} />
       </Content>
     </Container>
   );

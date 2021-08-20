@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 
 import Box from "../box/box.component";
 
-const BoxPop = ({ children, setShowAddProduct, w }) => {
+const BoxPop = ({ children, setLayer }) => {
   return (
     <Container animate={{ scale: 1 }}>
-      <Layer onClick={() => setShowAddProduct(false)} />
-      <Content style={{ width: `${w}%` }}>
+      <Layer onClick={() => setLayer(false)} />
+      <Content>
         <Box>{children}</Box>
       </Content>
     </Container>
@@ -23,7 +23,7 @@ const Container = styled(motion.div)`
   height: 100%;
   display: flex;
   justify-content: center;
-  padding-top: ${(props) => props.theme.space[14]};
+  align-items: center;
   z-index: 100;
 `;
 const Layer = styled.div`
@@ -39,6 +39,8 @@ const Content = styled.div`
   z-index: 150;
   height: fit-content;
   min-width: 300px;
+  width: 60%;
+  height: 90%;
 `;
 
 export default BoxPop;

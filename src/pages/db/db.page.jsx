@@ -14,7 +14,9 @@ const DbPage = () => {
         <Link to="db/products">
           <IconCard icon="faShapers" text="Proizvodi" />
         </Link>
-        <IconCard icon="faBriefcase" text="Kupci" />
+        <Link to="db/customers">
+          <IconCard icon="faBriefcase" text="Kupci" />
+        </Link>
       </CardContainer>
     </Container>
   );

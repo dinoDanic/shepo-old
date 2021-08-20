@@ -25,48 +25,67 @@ const AddProduct = ({ setShowAddProduct }) => {
   };
 
   return (
-    <BoxPop setShowAddProduct={setShowAddProduct}>
+    <BoxPop w="60" setLayer={setShowAddProduct}>
       <Container>
         <Title>Dodaj Proizvod</Title>
         <Form onSubmit={handleSubmit}>
+          <Row>
+            <FormSection>
+              <InputTitle>Šifra Proizvoda</InputTitle>
+              <Input
+                style={{ flex: 0.5 }}
+                onChange={(e) => setProductCode(e.target.value)}
+                placeholder="557CP"
+              />
+            </FormSection>
+            <FormSection>
+              <InputTitle>Naziv proizvoda</InputTitle>
+              <Input
+                onChange={(e) => setProductName(e.target.value)}
+                placeholder="Pečenjara Krović"
+              />
+            </FormSection>
+          </Row>
           <FormSection>
-            <InputTitle>Šifra Proizvoda</InputTitle>
-            <Input
-              onChange={(e) => setProductCode(e.target.value)}
-              placeholder=""
-            />
-          </FormSection>
-          <FormSection>
-            <InputTitle>Naziv proizvoda</InputTitle>
-            <Input
-              onChange={(e) => setProductName(e.target.value)}
-              placeholder=""
-            />
-          </FormSection>
-          <FormSection>
-            <InputTitle>Težina kg</InputTitle>
+            <InputTitle>Težina</InputTitle>
             <Input
               onChange={(e) => setProductWeight(e.target.value)}
-              placeholder=""
+              placeholder="kg"
             />
           </FormSection>
-          <Button variant="primary">Dodaj</Button>
+          <ButtonContainer>
+            <Button variant="primary">Dodaj Proizvod</Button>
+          </ButtonContainer>
         </Form>
       </Container>
     </BoxPop>
   );
 };
 
-const Container = styled.div``;
+const Container = styled.div`
+  position: relative;
+  height: 100%;
+`;
 const FormSection = styled.div`
   margin-bottom: 10px;
+  flex: 0.49;
 `;
 const Form = styled.form`
   margin-top: ${(props) => props.theme.space[5]};
+  height: 100%;
+`;
+const Row = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;
 const InputTitle = styled.h5`
   font-weight: 400;
   margin-bottom: ${(props) => props.theme.space[1]};
+`;
+const ButtonContainer = styled.div`
+  position: absolute;
+  bottom: 0;
+  right: 0;
 `;
 
 export default AddProduct;

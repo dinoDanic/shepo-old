@@ -2,13 +2,15 @@ import React from "react";
 import styled from "styled-components";
 
 const defaultStyle = (theme) => `
-padding: ${theme.space[2]};
-margin-bottom: ${theme.space[2]};
+padding: ${theme.space[3]} ${theme.space[3]};
 border: 1px solid ${theme.colors.ui.border};
 border-radius: ${theme.borderRadius.m};
 color: gray;
+font-weight: 500;
 cursor: pointer;
+height: fit-content;
 font-size: ${theme.fontSize.xs};
+
 &:hover {
   border: 1px solid ${theme.colors.ui.borderHover};
 }
