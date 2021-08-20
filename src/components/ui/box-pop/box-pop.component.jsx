@@ -23,7 +23,7 @@ const Container = styled(motion.div)`
   height: 100%;
   display: flex;
   justify-content: center;
-  padding-top: ${(props) => props.theme.space[10]};
+  padding-top: ${(props) => props.theme.space[14]};
   z-index: 100;
 `;
 const Layer = styled.div`
@@ -32,6 +32,7 @@ const Layer = styled.div`
   top: 0;
   height: 100%;
   z-index: 50;
+  background-color: rgba(0, 0, 0, 0.3);
 `;
 
 const Content = styled.div`

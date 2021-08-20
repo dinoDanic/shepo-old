@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Input = ({ ...otherProps }) => {
-  return <InputUi {...otherProps} />;
+  return <InputUi spellcheck="false" {...otherProps} />;
 };
 
 const InputUi = styled.input`
