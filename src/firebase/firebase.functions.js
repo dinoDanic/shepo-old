@@ -11,5 +11,6 @@ export const createProduct = async (
     productCode,
     productName,
     productWeight,
+    created: new Date(),
   });
 };
