@@ -6,7 +6,11 @@ import MenuTrigger from "../../components/menu/components/menu-trigger.component
 import Button from "../../components/ui/button/button.conponent";
 import AddProduct from "../../components/add-product/add-product.component";
 
-const ProductsPage = () => {
+interface IProps {
+  setShowAddProduct: React.SetStateAction<boolean>;
+}
+
+const ProductsPage: React.FC<IProps> = () => {
   const [showAddProduct, setShowAddProduct] = useState(false);
   return (
     <Container>

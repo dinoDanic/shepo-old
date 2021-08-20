@@ -1,7 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-const Button: React.FC = ({ children, ...otherProps }) => {
+interface IProps {
+  onClick: () => void;
+}
+
+const Button: React.FC<IProps> = ({ children, ...otherProps }) => {
   return <Btn {...otherProps}>{children}</Btn>;
 };
 

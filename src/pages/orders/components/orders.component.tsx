@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 import OrderItem from "./order-item.component";
 import SearchBar from "./search-bar.component";
 
-import { state } from "../orders.fake.js";
+import { state } from "../orders.fake";
 
 const Orders = () => {
   return (
