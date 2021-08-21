@@ -39,7 +39,7 @@ const Content = styled.div`
   z-index: 150;
   height: fit-content;
   min-width: 300px;
-  width: 60%;
+  width: 70%;
   height: 90%;
 `;
 

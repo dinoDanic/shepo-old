@@ -14,3 +14,12 @@ export const createProduct = async (
     created: new Date(),
   });
 };
+
+export const createCustomer = async (customerName, customerAdress, office) => {
+  const customerCollection = db.collection("customers");
+  await customerCollection.add({
+    name: customerName,
+    address: customerAdress,
+    office,
+  });
+};
