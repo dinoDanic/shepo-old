@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const Bar = ({ children, variant }) => {
-  console.log(variant);
   return <BarContainer variant={variant}>{children}</BarContainer>;
 };
 

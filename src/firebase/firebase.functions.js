@@ -26,3 +26,11 @@ export const createCustomer = async (customerName, customerAdress, office) => {
     id: uuidv4(),
   });
 };
+
+export const createOrder = async (newOrder) => {
+  const orderColletctions = db.collection("orders");
+  await orderColletctions.add({
+    ...newOrder,
+    id: uuidv4(),
+  });
+};

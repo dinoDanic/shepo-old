@@ -1,16 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled, { css } from "styled-components";
+import { useSelector } from "react-redux";
+import useCustomers from "../../../hooks/useCustomers";
 
 import Bar from "../../../components/ui/bar/bar.component";
 
 const OrderItem = ({ order }) => {
-  const { orderId, orderDate, deliveryDate, createdDate, customer, status } =
-    order;
+  const [customer, setCustomer] = useState({});
+  const { orderId, orderDate, deliveryDate, createdDate, customerId } = order;
+  const getCustomer = useCustomers(customerId);
+
+  useEffect(() => {
+    setCustomer(getCustomer);
+  }, [getCustomer]);
 
   const getDate = (date) => {
-    const d = new Date(date);
-    const day = d.getDay();
-    const month = d.getMonth();
+    if (!date) return;
+    console.log(date);
+    const toDate = date.toDate();
+    const d = new Date(toDate);
+    const day = d.getDate();
+    const month = d.getMonth() + 1;
+    console.log(day, month);
     if (month < 10 && day < 10) {
       return `0${day}.0${month}.`;
     }
@@ -24,15 +35,17 @@ const OrderItem = ({ order }) => {
 
   return (
     <Container>
-      <Bar>
-        <Customer>{customer.name}</Customer>
-        <Poslovnica>{customer.poslovnica}</Poslovnica>
-        <OrderId>{orderId}</OrderId>
-        <OrderDate>{getDate(orderDate)}</OrderDate>
-        <DeliveryDate>{getDate(deliveryDate)}</DeliveryDate>
-        <CreatedDate>{getDate(createdDate)}</CreatedDate>
-        <Status>{status}</Status>
-      </Bar>
+      {customer && (
+        <Bar>
+          <Customer>{customer.name}</Customer>
+          <Office>{customer.name}</Office>
+          <OrderId>{orderId}</OrderId>
+          <OrderDate>{getDate(orderDate)}</OrderDate>
+          <DeliveryDate>{getDate(deliveryDate)}</DeliveryDate>
+          <CreatedDate>{getDate(createdDate)}</CreatedDate>
+          <Status>done</Status>
+        </Bar>
+      )}
     </Container>
   );
 };
@@ -45,7 +58,7 @@ const ItemsShared = css`
 const Customer = styled.div`
   ${ItemsShared}
 `;
-const Poslovnica = styled.div`
+const Office = styled.div`
   ${ItemsShared}
   display: flex;
   justify-content: center;

@@ -1,3 +1,7 @@
+import React from "react";
+
+import useStart from "./useStart";
+
 import styled from "styled-components";
 import { Route } from "react-router-dom";
 
@@ -11,6 +15,7 @@ import ProductsPage from "./pages/products/products.page";
 import Customers from "./pages/customers/customers.page";
 
 function App() {
+  useStart();
   return (
     <Container>
       <MenuContainer>

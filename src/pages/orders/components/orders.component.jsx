@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { db } from "../../../firebase/firebase.utils";
 import styled, { css } from "styled-components";
 
 import OrderItem from "./order-item.component";
@@ -10,6 +11,16 @@ import AddOrder from "../../../components/add-order/add-order.component";
 const Orders = () => {
   const [state, setState] = useState([]);
   const [showCreateOrder, setShowCreateOrder] = useState(false);
+
+  useEffect(() => {
+    db.collection("orders").onSnapshot((orders) => {
+      let list = [];
+      orders.forEach((order) => {
+        list.push(order.data());
+      });
+      setState(list);
+    });
+  }, []);
   return (
     <Container>
       <FnBar>

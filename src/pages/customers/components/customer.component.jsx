@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Bar from "../../../components/ui/bar/bar.component";
 
 const Customer = ({ customer }) => {
+  console.log(customer);
   const { name, address, id } = customer;
   return (
     <Bar>
