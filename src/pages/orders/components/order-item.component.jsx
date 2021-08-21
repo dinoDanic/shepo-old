@@ -1,6 +1,8 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
+import Bar from "../../../components/ui/bar/bar.component";
+
 const OrderItem = ({ order }) => {
   const { orderId, orderDate, deliveryDate, createdDate, customer, status } =
     order;
@@ -22,7 +24,7 @@ const OrderItem = ({ order }) => {
 
   return (
     <Container>
-      <Item>
+      <Bar>
         <Customer>{customer.name}</Customer>
         <Poslovnica>{customer.poslovnica}</Poslovnica>
         <OrderId>{orderId}</OrderId>
@@ -30,24 +32,12 @@ const OrderItem = ({ order }) => {
         <DeliveryDate>{getDate(deliveryDate)}</DeliveryDate>
         <CreatedDate>{getDate(createdDate)}</CreatedDate>
         <Status>{status}</Status>
-      </Item>
+      </Bar>
     </Container>
   );
 };
 
 const Container = styled.div``;
-const Item = styled.div`
-  padding: 10px 15px;
-  border-radius: 10px;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: ${(props) => props.theme.space[2]};
-  font-weight: 300;
-  &:hover {
-    background-color: ${(props) => props.theme.colors.brand.body};
-  }
-`;
 const ItemsShared = css`
   flex: 1;
   min-width: 100px;

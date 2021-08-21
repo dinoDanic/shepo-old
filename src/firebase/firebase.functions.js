@@ -1,4 +1,5 @@
 import { db } from "./firebase.utils";
+import { v4 as uuidv4 } from "uuid";
 
 // Create Functions
 export const createProduct = async (
@@ -8,6 +9,7 @@ export const createProduct = async (
 ) => {
   const productCollection = db.collection("products");
   await productCollection.add({
+    id: uuidv4(),
     productCode,
     productName,
     productWeight,
@@ -21,5 +23,6 @@ export const createCustomer = async (customerName, customerAdress, office) => {
     name: customerName,
     address: customerAdress,
     office,
+    id: uuidv4(),
   });
 };

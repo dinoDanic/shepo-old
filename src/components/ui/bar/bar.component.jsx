@@ -31,7 +31,9 @@ const defaultStyle = (theme) => `
   border-radius: ${theme.borderRadius.s};
   margin-bottom: ${theme.space[1]};
   font-weight: 300;
+  
   div {
+    flex: 1;
     display: flex;
     justify-content: center;
     &:first-child {

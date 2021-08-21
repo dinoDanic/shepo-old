@@ -1,16 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled, { css } from "styled-components";
 
 import OrderItem from "./order-item.component";
 import SearchBar from "./search-bar.component";
-
-import { state } from "../orders.fake";
+import Button from "../../../components/ui/button/button.conponent";
+import Bar from "../../../components/ui/bar/bar.component";
+import AddOrder from "../../../components/add-order/add-order.component";
 
 const Orders = () => {
+  const [state, setState] = useState([]);
+  const [showCreateOrder, setShowCreateOrder] = useState(false);
   return (
     <Container>
-      <SearchBar />
-      <OrdersBar>
+      <FnBar>
+        <SearchBar />
+        <Button
+          onClick={() => {
+            setShowCreateOrder(!showCreateOrder);
+          }}
+        >
+          Nova Narudžba
+        </Button>
+      </FnBar>
+      <Bar variant="main">
         <Customer>Kupac</Customer>
         <Poslovnica>Poslovnica</Poslovnica>
         <OrderId>Broj narudžbe</OrderId>
@@ -18,24 +30,16 @@ const Orders = () => {
         <DeliveryDate>Datum isporuke</DeliveryDate>
         <CreatedDate>Kreirano dana</CreatedDate>
         <Status>Status</Status>
-      </OrdersBar>
+      </Bar>
       {state.map((order) => (
         <OrderItem order={order} key={order.orderId} />
       ))}
+      {showCreateOrder && <AddOrder setLayer={setShowCreateOrder} />}
     </Container>
   );
 };
 
 const Container = styled.div``;
-const OrdersBar = styled.div`
-  padding: 10px 15px;
-  border-radius: 10px;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  background-color: ${(props) => props.theme.colors.brand.body};
-  margin-bottom: ${(props) => props.theme.space[2]};
-`;
 const ItemsShared = css`
   flex: 1;
   min-width: 100px;
@@ -72,6 +76,9 @@ const Status = styled.div`
   ${ItemsShared}
   display: flex;
   justify-content: flex-end;
+`;
+const FnBar = styled.div`
+  display: flex;
 `;
 
 export default Orders;

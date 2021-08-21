@@ -43,7 +43,6 @@ const NewCustomer = ({ setShowCustomer }) => {
     setOfficeTitle("");
     setOfficeAdress("");
   };
-  console.log(office);
   return (
     <BoxPop setLayer={setShowCustomer}>
       <Title>Novi Kupac</Title>
